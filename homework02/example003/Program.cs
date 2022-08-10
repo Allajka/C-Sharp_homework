@@ -35,3 +35,15 @@ if (sumNumber < 3)
     Console.WriteLine("Нет третьей цифры");
 }
 
+// Console.Write("Введите число: ");
+// int number = Convert.ToInt32(Console.ReadLine());
+// string lineNumber = Convert.ToString(number);
+
+// if (lineNumber.Length > 2)
+// {
+//     Console.WriteLine(lineNumber[2]);
+// }
+// else
+// {
+//     Console.WriteLine("Нет третей цифры");
+// }
