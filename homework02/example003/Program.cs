@@ -14,7 +14,8 @@ int checkNumber(int numbers)
     return amountNumber;
 }
 
-int number = 12;
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
 int sumNumber=checkNumber(number);
 int control = sumNumber - 3;
 int i = 0;
@@ -32,7 +33,7 @@ if (sumNumber >= 3)
 
 if (sumNumber < 3)
 {
-    Console.WriteLine("Нет третьей цифры");
+    Console.WriteLine($"Нет третьей цифры в числе {number}");
 }
 
 // Console.Write("Введите число: ");
@@ -41,9 +42,16 @@ if (sumNumber < 3)
 
 // if (lineNumber.Length > 2)
 // {
-//     Console.WriteLine(lineNumber[2]);
+//     Console.WriteLine($"Третья цифра числа {lineNumber[2]}");
 // }
 // else
 // {
 //     Console.WriteLine("Нет третей цифры");
 // }
+
+// Console.Write("Введите число: ");
+// string number = Console.ReadLine();
+// char[] arr = number.ToCharArray();;
+
+// if (arr.Length >= 3) Console.WriteLine($"Третья цифра числа {arr[2]}");
+// else Console.WriteLine("Нет третей цифры");
