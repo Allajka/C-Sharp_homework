@@ -3,7 +3,8 @@
 1, -7, 567, 89, 223 -> 4 */
 
 int count = 0;
-Console.WriteLine("Подсчет чисел больше 0. Для прекращения введите q/");
+Console.WriteLine("Подсчет чисел больше 0. Для прекращения введите q.");
+
 while (true)
 {
     Console.Write("Введите число: ");
@@ -12,5 +13,3 @@ while (true)
     if (number == "q") break;
     if (Convert.ToInt32(number) > 0) count++;
 }
-
-System.Console.WriteLine($"Введено {count} чисел больше 0.");

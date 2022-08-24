@@ -1,18 +1,4 @@
-﻿/* Написать алгоритм поворота матрицы [N;N] на 90 градусов
-    012     012
-0   123  0  741    
-1   456  1  852
-2   789  2  963 */
-
-int[,] picture = new int[,]
-{
-    {1, 0, 0, 0, 0},
-    {1, 0, 0, 0, 0},
-    {1, 0, 0, 0, 0},
-    {1, 0, 0, 0, 0},
-    {1, 1, 1, 1, 1},
-};
-
+﻿/* Написать алгоритм поворота матрицы [N;N] на 90 градусов */
 void PrintPicture(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
@@ -26,25 +12,38 @@ void PrintPicture(int[,] arr)
     }
 }
 
-PrintPicture(picture);
-System.Console.WriteLine();
-
-for (int i = 0; i < picture.GetLength(0); i++)
+int[,] picture = new int[,]
 {
+    {1, 0, 0, 0, 0},
+    {1, 0, 0, 0, 0},
+    {1, 0, 0, 0, 0},
+    {1, 0, 0, 0, 0},
+    {1, 1, 1, 1, 1},
+};
 
-    // for (int j = 0; j < picture.GetLength(1); j++)
-    // {
-    //     int temporary = picture[i, j];
-    //     picture[i, j] = picture[j, picture.GetLength(1) - 1 - i];
-    //     picture[j, picture.GetLength(1) - 1 - i] = temporary;
-    // }
-    for (int j = 0; j < picture.GetLength(1); j++)
+int[,] TurnArray(int[,] arr)
+{
+    int[,] newArr = new int[arr.GetLength(0), arr.GetLength(1)];
+    for (int i = 0; i < newArr.GetLength(0); i++)
     {
-        int temporary = picture[j, i];
-        picture[j, i] = picture[picture.GetLength(1) - 1 - i, j];
-        picture[picture.GetLength(1) - 1 - i, j] = temporary;
+        for (int j = 0; j < newArr.GetLength(1); j++)
+        {
+            newArr[i,j] = arr[arr.GetLength(0) - j - 1, i];
+        }
     }
-}
 
+    return newArr;
+}
 PrintPicture(picture);
 System.Console.WriteLine();
+while(true)
+{
+    Console.Write("Нажмите q для выхода.\nНажмите любую букву для поворота фигуры: ");
+    string userAnswer = Console.ReadLine()!;
+    userAnswer.ToLower();
+    if (userAnswer == "q" || userAnswer == "Й") break;
+    picture = TurnArray(picture);
+    System.Console.WriteLine();
+    PrintPicture(picture);
+    System.Console.WriteLine();
+}
