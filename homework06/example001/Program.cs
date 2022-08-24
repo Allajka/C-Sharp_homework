@@ -13,3 +13,5 @@ while (true)
     if (number == "q") break;
     if (Convert.ToInt32(number) > 0) count++;
 }
+
+Console.WriteLine($"Введено {count} чисел больше 0.");
