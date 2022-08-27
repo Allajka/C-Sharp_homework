@@ -11,16 +11,6 @@ void PrintPicture(int[,] arr)
         Console.WriteLine();
     }
 }
-
-int[,] picture = new int[,]
-{
-    {1, 0, 0, 0, 0},
-    {1, 0, 0, 0, 0},
-    {1, 0, 0, 0, 0},
-    {1, 0, 0, 0, 0},
-    {1, 1, 1, 1, 1},
-};
-
 int[,] TurnArray(int[,] arr)
 {
     int[,] newArr = new int[arr.GetLength(0), arr.GetLength(1)];
@@ -34,6 +24,16 @@ int[,] TurnArray(int[,] arr)
 
     return newArr;
 }
+
+int[,] picture = new int[,]
+{
+    {1, 0, 0, 0, 0},
+    {1, 0, 0, 0, 0},
+    {1, 0, 0, 0, 0},
+    {1, 0, 0, 0, 0},
+    {1, 1, 1, 1, 1},
+};
+
 PrintPicture(picture);
 System.Console.WriteLine();
 while(true)

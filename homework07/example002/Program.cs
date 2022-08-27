@@ -41,16 +41,23 @@ void SearchArrayNumber(int[,] arr, int desiredNumber)
         {
             if (arr[i, j] == desiredNumber)
             {
-                Console.WriteLine($"Число: {desiredNumber} присутствует в массиве, позиция [{i}, {j}]");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"Число {desiredNumber} присутствует в массиве. Позиция: [{i}, {j}].");
+                Console.ResetColor();
                 count += 1;
             }
         }
     }
-    if (count == 0) Console.WriteLine($"Число: {desiredNumber} отсутствует в массиве");
+    if (count == 0)
+    {
+        Console.ForegroundColor = ConsoleColor.Red;
+        Console.WriteLine($"Число {desiredNumber} отсутствует в массиве");
+        Console.ResetColor();
+    }
 }
 
 int[,] numbers = CreateArray(5, 5);
-Console.Write("Введите число для поиска: ");
+Console.Write("Поиск значений в двумерном массиве состоящем из чисел [0, 9]. \nВведите число для поиска: ");
 int userNumber = Convert.ToInt32(Console.ReadLine());
 PrintArray(numbers);
 Console.WriteLine();

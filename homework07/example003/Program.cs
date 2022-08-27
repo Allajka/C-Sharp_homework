@@ -30,7 +30,7 @@ void PrintArray(int[,] arr)
     }
 }
 
-double AverageNumberCol(int[,] arr, int col)
+double AverageNumbersCol(int[,] arr, int col)
 {
     double result = 0;
     for (int i = 0; i < arr.GetLength(0); i++)
@@ -40,11 +40,15 @@ double AverageNumberCol(int[,] arr, int col)
     return result / arr.GetLength(1);
 }
 
+void PrintAverageNumbersCol(int[,] numbers)
+{
+    for (int i = 0; i < numbers.GetLength(1); i++)
+    {
+        double average = AverageNumbersCol(numbers, i);
+        Console.WriteLine($"Cреднее арифметическое столбца № {i + 1} = {average}.");
+    }
+}
+
 int[,] numbers = CreateArray(5, 5);
 PrintArray(numbers);
-
-for (int i = 0; i < numbers.GetLength(1); i++)
-{
-    double average = AverageNumberCol(numbers, i);
-    Console.WriteLine($"Cреднее арифметическое столбца {i + 1} = {average}.");
-}
+PrintAverageNumbersCol(numbers);
