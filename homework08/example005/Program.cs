@@ -32,7 +32,7 @@ for (int i = 1; i < arr.GetLength(0); i++)
     arr[i, arr.GetLength(0) - 1] = value;
     value++;
 }
-for (int i = arr.GetLength(0) - 1; i >= 0; i--)
+for (int i = arr.GetLength(0) - 2; i >= 0; i--)
 {
     arr[arr.GetLength(0) - 1, i] = value;
     value++;
@@ -58,4 +58,5 @@ for (int i = 2; i < arr.GetLength(0)-1; i++)
         value++;
     }
 }
+
 PrintArray(arr);
