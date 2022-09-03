@@ -4,12 +4,8 @@ M = 4; N = 8. -> 30 */
 
 int SumNumbers(int firstNumber, int lastNumber, int sum = 0)
 {
-    if (firstNumber > lastNumber) return sum;
-    else
-    {
-        sum = firstNumber + SumNumbers(firstNumber + 1, lastNumber, sum);
-    }
-    return sum;
+    if (firstNumber > lastNumber) return 0;
+    else return firstNumber + SumNumbers(firstNumber + 1, lastNumber, sum);
 }
 
 int CheckInput(string text, int number = 0)
